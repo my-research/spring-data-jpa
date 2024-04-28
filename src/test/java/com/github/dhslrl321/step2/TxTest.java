@@ -1,16 +1,18 @@
-package com.github.dhslrl321.step1;
+package com.github.dhslrl321.step2;
 
 import com.github.dhslrl321.support.fixture.Member;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @SpringBootTest
-public class HibernateTest {
+public class TxTest {
 
     @Autowired
     EntityManagerFactory entityManagerFactory;
@@ -23,22 +25,17 @@ public class HibernateTest {
     }
 
     @Test
-    @DisplayName("entity 생명주기")
     void name() {
-        // new/transit
-        Member member = new Member("A", "jang");
+        EntityTransaction transaction = entityManager.getTransaction();
 
-        entityManager.persist(member); // managed
-        Member a = entityManager.find(Member.class, "A");
-        System.out.println("a = " + a);
+        Member entity = Member.of("A", "heo");
 
-        entityManager.detach(member); // detached
-    }
+        transaction.begin();
+        entityManager.persist(entity); // p.c 저장 -> db 저장
+        transaction.commit();
 
-    @Test
-    void name2() {
-        Member a = entityManager.find(Member.class, "A");
-        System.out.println("a = " + a);
+        Member actual = entityManager.find(Member.class, "A");// p.c 에서 옴
+
+        assertThat(entity).isEqualTo(actual);
     }
 }
-
