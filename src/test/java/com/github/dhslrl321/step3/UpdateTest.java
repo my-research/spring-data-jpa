@@ -24,10 +24,9 @@ public class UpdateTest extends AbstractJpaTest {
 
     @Test
     void name2() {
-        Member entity = Member.of("A", "heo");
-        entityManager.persist(entity);
+        entityManager.persist(Member.of("A", "heo"));
         entityManager.persist(Member.of("jang"));
 
-        entityManager.createQuery("SELECT m FROM Member m where ?: entity", Member.class); // flush
+        entityManager.createQuery("SELECT m FROM Member m where ?", Member.class); // flush
     }
 }
