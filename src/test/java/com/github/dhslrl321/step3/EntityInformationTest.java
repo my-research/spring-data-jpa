@@ -2,14 +2,9 @@ package com.github.dhslrl321.step3;
 
 import com.github.dhslrl321.support.AbstractJpaTest;
 import com.github.dhslrl321.support.fixture.Member;
-
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.data.jpa.repository.query.DefaultJpaEntityMetadata;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaEntityInformationSupport;
-import org.springframework.data.repository.core.EntityInformation;
-import org.springframework.orm.jpa.EntityManagerProxy;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

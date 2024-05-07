@@ -4,7 +4,6 @@ import com.github.dhslrl321.support.AbstractJpaTest;
 import com.github.dhslrl321.support.fixture.Member;
 import jakarta.persistence.EntityTransaction;
 import org.junit.jupiter.api.Test;
-import org.springframework.data.jpa.repository.Query;
 
 public class UpdateTest extends AbstractJpaTest {
 

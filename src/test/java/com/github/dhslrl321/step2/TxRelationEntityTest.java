@@ -4,10 +4,8 @@ import com.github.dhslrl321.support.AbstractJpaTest;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Id;
-import jakarta.persistence.TransactionRequiredException;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
