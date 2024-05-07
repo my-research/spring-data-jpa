@@ -4,12 +4,8 @@ import com.github.dhslrl321.support.AbstractJpaTest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.UUID;
 
 import static com.github.dhslrl321.support.TestUtils.newId;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
