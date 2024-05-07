@@ -16,7 +16,7 @@ public class EntityTest extends AbstractJpaTest {
 class Foo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    String id = "foo";
+    int id;
     @Enumerated(EnumType.STRING)
     FooType type;
 }
